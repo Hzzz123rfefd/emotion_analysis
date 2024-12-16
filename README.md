@@ -13,7 +13,7 @@ pip install -r requirements.txt
 
 ## Usage
 ### Dataset
-Firstly, you can download the jobstreet dataset, [conll2003](https://www.kaggle.com/datasets/azraimohamad/jobstreet-all-job-dataset),put them into `datasets/jobstreet`
+Firstly, you can download the jobstreet dataset, [jobstreet](https://www.kaggle.com/datasets/azraimohamad/jobstreet-all-job-dataset),put them into `datasets/jobstreet`
 your directory structure should be:
 - emotion_analysis/
   - datasets/
