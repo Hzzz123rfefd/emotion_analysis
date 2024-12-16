@@ -1,0 +1,5 @@
+jobstreet_train
+__pycache__
+*.csv
+saved_model
+.DS_Store
