@@ -55,11 +55,14 @@ class DatasetForEmotionAnalysis(Dataset):
             seq_length = item['input_ids'].shape[1]
             input_ids = torch.ones((item['input_ids'].shape[0], max_length), dtype = item['input_ids'].dtype) * self.tokenizer.pad_token_id
             attention_mask = torch.zeros((item['attention_mask'].shape[0], max_length), dtype = item['attention_mask'].dtype)
+            token_type_ids = torch.zeros((item['token_type_ids'].shape[0], max_length), dtype = item['token_type_ids'].dtype)
 
             input_ids[:, :seq_length] = item['input_ids']
             attention_mask[:, :seq_length] = item['attention_mask']
+            token_type_ids[:, :seq_length] = item['token_type_ids']
 
             item["input_ids"] = input_ids
             item["attention_mask"] = attention_mask
+            item['token_type_ids'] = token_type_ids
 
         return  recursive_collate_fn(batch)

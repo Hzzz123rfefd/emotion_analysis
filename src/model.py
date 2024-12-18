@@ -182,13 +182,11 @@ class ModelPretrainForEmotionAnalysis(nn.Module):
         predict = self.classifier_head(sequence_output)  # shape: [batch_size, seq_len, num_class]
         _, num_class = predict.shape
         predict = predict.reshape(-1,num_class)
-        mask = batch_data["attention_mask"].reshape(-1)
         class_weights = torch.ones(self.num_class).to(self.device)
         # class_weights[0] = 0.1
         output = {
             "predict":predict,
             "label":label,
-            "mask":mask,
             "class_weights":class_weights
         }
         return output

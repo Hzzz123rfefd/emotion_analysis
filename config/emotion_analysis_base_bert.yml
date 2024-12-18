@@ -10,7 +10,7 @@ model:
 
 # trainning args
 traininng:
-  batch_size: 1                                      
+  batch_size: 2                                      
   epochs: 1000          
   learning_rate: 0.00002
   optimizer: AdamW                                                           # Currently only supports AdamW and Adam
